@@ -1,4 +1,4 @@
-# Bitplebs - Silent Payments
+# Bitshala Developer Summit - Silent Payments
 
 ## What is Silent Payments?
 
