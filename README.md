@@ -7,13 +7,13 @@ Silent Payments (BIP352) is a Bitcoin protocol that enables receiving private pa
 
 ## Timeline
 
-| Topic                            | Duration in minutes   | Format       |
-| -------------------------------- | --------------------- | ------------ |
-| Introduction to Silent Sayments  | 20                    | Presentation |
-| Workshop Introduction            | 10                    | Presentation |
-| Silent Payments Demo             | 60                    | Workshop     |
-| Problem Statement Description    | 5                     | Discussion   |
-| Brainstorming Session            | 25                    | Discussion   |
+| Topic                            | Duration in minutes   | Format       | Host            |
+| -------------------------------- | --------------------- | ------------ | --------------- |
+| Introduction to Silent Payments  | 20                    | Presentation | Anmol           |
+| Workshop Introduction            | 10                    | Presentation | Tanveer         |
+| Silent Payments Demo             | 60                    | Workshop     | Anmol & Tanveer |
+| Problem Statement Description    | 5                     | Discussion   | Anmol           |
+| Brainstorming Session            | 25                    | Discussion   | Anmol & Tanveer |
 
 ## Workshop Instructions
 
