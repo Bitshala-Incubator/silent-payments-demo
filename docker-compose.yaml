@@ -1,0 +1,38 @@
+services:
+  esplora:
+    image: blockstream/esplora
+#    image: theanmolsharma/esplora-arm:latest
+#    platform: linux/arm64/v8
+    environment:
+      ELECTRS_ARGS: --cookie alice:password
+      DEBUG: verbose
+    ports:
+      - "50001:50001"
+      - "8094:80"
+      - "18443:18443"
+    volumes:
+      - ./configs/esplora/nginx.conf.in:/srv/explorer/source/contrib/nginx.conf.in
+      - ./configs/esplora/bitcoin-regtest-explorer.conf.in:/srv/explorer/source/contrib/bitcoin-regtest-explorer.conf.in
+    command: bash -c "/srv/explorer/run.sh bitcoin-regtest explorer"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:80" ]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+  indexer:
+    image: silentpay-indexer:latest
+    environment:
+      DB_PATH: /data/indexer.sqlite
+      BITCOIN_CORE_RPC_USER: alice
+      BITCOIN_CORE_RPC_PASSWORD: password
+      BITCOIN_CORE_RPC_HOST: esplora
+      BITCOIN_CORE_RPC_PORT: 18443
+    ports:
+      - "3000:80"
+    depends_on:
+      - esplora
